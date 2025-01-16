@@ -31,6 +31,7 @@ A API de Gerenciamento de Colaboradores permite que os sistemas de RH cadastrem,
 ## 3. Diagrama de Classes
 
 ```mermaid
+classDiagram
 class Colaborador{
   - id: number,
   - nome: string,
