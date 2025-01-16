@@ -31,15 +31,13 @@ A API de Gerenciamento de Colaboradores permite que os sistemas de RH cadastrem,
 ## 3. Diagrama de Classes
 
 ```mermaid
-classDiagram
-class  Colaborador{
+class Colaborador{
   - id: number,
   - nome: string,
   - data_nascimento: Date,
   - data_admissão: Date,
   - salario: number
 
-  + métodos()
   + findAll (): Promise<Colaborador[]>
   + findById(id: number): Promise<Colaborador>
   + findByNome(nome: string): Promise<Colaborador[]>
