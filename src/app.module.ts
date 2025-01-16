@@ -8,7 +8,7 @@ import { ColaboradorModule } from './colaborador/colaborador.module';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
-      type:'mysql',
+      type: 'mysql',
       host: 'localhost',
       port: 3306,
       username: 'root',
