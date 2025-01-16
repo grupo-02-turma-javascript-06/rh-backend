@@ -39,7 +39,6 @@ class Colaborador{
   - data_admissão: Date,
   - salario: number
 
-  + métodos()
   + findAll (): Promise<Colaborador[]>
   + findById(id: number): Promise<Colaborador>
   + findByNome(nome: string): Promise<Colaborador[]>
