@@ -17,7 +17,6 @@ export class Colaborador {
   @Column({ length: 100, nullable: false })
   nome: string;
 
-  @Transform(({ value }: TransformFnParams) => value?.trim())
   @IsNotEmpty()
   @Column({ nullable: false })
   data_nascimento: Date;
@@ -25,7 +24,6 @@ export class Colaborador {
   @UpdateDateColumn()
   data_admissao: Date;
 
-  @Transform(({ value }: TransformFnParams) => value?.trim())
   @IsNotEmpty()
   @Column({ type: 'decimal', precision: 10, scale: 2 })
   salario: number;
