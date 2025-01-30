@@ -11,14 +11,21 @@ export class ColaboradorService {
   ) {}
 
   async findAll(): Promise<Colaborador[]> {
-    return await this.colaboradorRepository.find();
-  }
+    return await this.colaboradorRepository.find({
+      relations:{
+          cargo: true
+      }
+  });
+}
 
   async findById(id: number): Promise<Colaborador> {
     const colaborador = await this.colaboradorRepository.findOne({
       where: {
         id,
       },
+      relations:{
+        cargo: true
+    }
     });
 
     if (!colaborador)
@@ -35,6 +42,9 @@ export class ColaboradorService {
       where: {
         nome: ILike(`%${nome}%`),
       },
+      relations:{
+        cargo: true
+    }
     });
   }
 

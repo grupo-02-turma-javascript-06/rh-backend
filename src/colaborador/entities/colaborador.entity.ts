@@ -3,9 +3,11 @@ import { IsNotEmpty } from 'class-validator';
 import {
   Column,
   Entity,
+  ManyToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
+import { Cargo } from '../../cargo/entities/cargo.entity';
 
 @Entity({ name: 'tb_colaboradores' })
 export class Colaborador {
@@ -27,4 +29,9 @@ export class Colaborador {
   @IsNotEmpty()
   @Column({ type: 'decimal', precision: 10, scale: 2 })
   salario: number;
+
+  @ManyToOne(() => Cargo, (cargo) => cargo.colaborador, {
+    onDelete: "CASCADE"
+ })
+ cargo: Cargo
 }
